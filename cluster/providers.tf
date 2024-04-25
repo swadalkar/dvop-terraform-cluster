@@ -16,5 +16,11 @@ terraform {
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   skip_provider_registration = true 
-  features {}
+  client_id = var.clientid
+  client_secret = var.clustersecrect
+  subscription_id = var.subscriptionid
+  tenant_id = var.tenantid
+  features {
+    
+  }
 }
