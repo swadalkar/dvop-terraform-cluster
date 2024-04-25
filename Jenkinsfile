@@ -16,7 +16,7 @@ pipeline {
         }
     }
 }
-post { 
+  post {
         always { 
             script {
                 sh "docker system prune --force --all --volumes"
