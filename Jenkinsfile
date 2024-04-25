@@ -2,7 +2,13 @@ pipeline {
     agent { node { label 'azure-vm' } }
     stages {
       stage('Create Cluster') {
+            agent {
+                docker {
+                    image 'dvopsimages.azurecr.io/base/dvopssupport'
+                }
+            }
         steps {
+            script{
          withCredentials([azureServicePrincipal('azureserviceprincipallatest')]) {
            sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID' 
            sh 'az acr login --name dvopsimages'
@@ -11,6 +17,7 @@ pipeline {
               sh 'cd /mnt'
               sh 'terraform init'
           }
+         }
          }
         }
     }
