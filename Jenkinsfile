@@ -10,6 +10,8 @@ pipeline {
            docker.image('dvopsimages.azurecr.io/base/dvopssupport').inside("-v ${WORKSPACE}:/mnt -u -0:0") {
               sh "cd /mnt/cluster; set -x; az login --service-principal -u ${AZURE_CLIENT_ID} -p ${AZURE_CLIENT_SECRET} -t ${AZURE_TENANT_ID}; az account set --subscription a80b3931-1be9-4942-afb4-2cf9a987a136"
               //sh 'cd /mnt/cluster; terraform init "-backend-config=key=f1"'
+              sh 'cd /mnt/cluster; terraform init'
+              sh 'cd /mnt/cluster; terraform -auto--approve'
           }
          }
          }
