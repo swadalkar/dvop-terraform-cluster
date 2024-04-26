@@ -26,7 +26,7 @@ pipeline {
   post {
         always { 
             script {
-                //sh "docker system prune --force --all --volumes"
+                sh "docker system prune --force --all --volumes"
                sh "echo HIIIIIIIIIII"
             }
           cleanWs()
