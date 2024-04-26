@@ -5,20 +5,20 @@ variable "clustername" {
 
 variable "clientid" {
   type        = string
-  default = "cluster1"
+  default = ""
 }
 
 variable "clustersecrect" {
   type        = string
-  default = "cluster1"
+  default = ""
 }
 
 variable "subscriptionid" {
   type        = string
-  default = "cluster1"
+  default = ""
 }
 
 variable "tenantid" {
   type        = string
-  default = "cluster1"
+  default = ""
 }
