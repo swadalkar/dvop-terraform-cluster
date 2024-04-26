@@ -10,10 +10,10 @@ terraform {
     storage_account_name = "csg10032003748e0302"                      # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
     container_name       = "terraform"                       # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
     key                  = "key1"        # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-    tenant_id            = "${var.tenantid}"
-    client_id            = "${var.clientid}"
-    client_secret        = "${var.clientsecrect}"
-    subscription_id      = "${var.subscriptionid}"
+    tenant_id            = ""
+    client_id            = ""
+    client_secret        = ""
+    subscription_id      = ""
   }
 }
 
