@@ -8,7 +8,7 @@ variable "clientid" {
   default = ""
 }
 
-variable "clustersecrect" {
+variable "clientsecrect" {
   type        = string
   default = ""
 }
