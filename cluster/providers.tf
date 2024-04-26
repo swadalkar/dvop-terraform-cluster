@@ -9,7 +9,7 @@ terraform {
     resource_group_name  = "cloud-shell-storage-centralindia"  # Can be passed via `-backend-config=`"resource_group_name=<resource group name>"` in the `init` command.
     storage_account_name = "csg10032003748e0302"                      # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
     container_name       = "terraform"                       # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-    key                  = "key1"        # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+    key                  = ""        # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
     tenant_id            = ""
     client_id            = ""
     client_secret        = ""
