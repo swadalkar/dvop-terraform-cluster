@@ -28,7 +28,7 @@ pipeline {
            sh "az acr login --name dvopsimages"
            docker.image('dvopsimages.azurecr.io/base/dvopssupport').inside("-v ${WORKSPACE}:/mnt -u -0:0") {
               sh "cd /mnt/cluster; set -x; az login --service-principal -u ${AZURE_CLIENT_ID} -p ${AZURE_CLIENT_SECRET} -t ${AZURE_TENANT_ID}; az account set --subscription a80b3931-1be9-4942-afb4-2cf9a987a136"
-              sh "cd /mnt/cluster; terraform apply -no-color -auto-approve -var clientid=$AZURE_CLIENT_ID -var clientsecrect=$AZURE_CLIENT_SECRET -var tenantid=$AZURE_TENANT_ID -var subscriptionid=a80b3931-1be9-4942-afb4-2cf9a987a136" 
+              sh "cd /mnt/cluster; terraform apply -no-color -auto-approve -var clustername=${CLUSTER_NAME} -var clientid=$AZURE_CLIENT_ID -var clientsecrect=$AZURE_CLIENT_SECRET -var tenantid=$AZURE_TENANT_ID -var subscriptionid=a80b3931-1be9-4942-afb4-2cf9a987a136" 
           }
          }
          }
